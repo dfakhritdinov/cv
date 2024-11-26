@@ -11,6 +11,9 @@
     <header id="title">
         <h1>Denys Fakhritdinov</h1>
         <span class="subtitle">Software engineer</span>
+        <div>
+            Interested in Scala & Rust, passionate about distributed systems, databases and functional programming.
+        </div>
     </header>
     <section class="main-block">
         <h2>
@@ -32,53 +35,50 @@
                 <div>
                     <div>
                         <div>
-                            Cluster sharding and Kafka-Journal maintainer.
+                            Cluster Sharding and Kafka-Journal Maintenance
                         </div>
                         <div>
-                            As a maintainer of Akka Cluster Sharding based libs I implemented
-                            state-transfer feature that allows shard rebalancing without requesting state from persistence.
-                            This leads to increased rebalance throwput and lover load on persistence layer, 
-                            reduced actor's offline time during rebalancing and flatten CPU spikes on shard startup. 
+                            Developed a <b>state-transfer feature</b> for Akka Cluster Sharding to optimize shard rebalancing, 
+                            reducing persistence load, minimizing actor downtime, and improving rebalance throughput.
                         </div>
                         <div>
-                            Replace Akka Persistence by implementing new persistence API and replacement of PersistentActor 
-                            to work with new persistence API. The goal was in providing backpressure capability during recovery
-                            (Akka Persistence is push-based while new API is pull-based) and smooth integration of Evolution
-                            game logic (written in FP style) with the persistence. Later used as a basement for state-transfer 
-                            feature.
+                            Replaced Akka Persistence with a pull-based persistence API to integrate with 
+                            functional programming logic and enable backpressure during recovery.
                         </div>
                         <div>
-                            As a Kafka-Journal mainteiner I superviced team contributions, documented some tricky parts,
-                            improved data integrity and prepared plan for major architectural change: Kafka-Journal designed
-                            as reliable persistent streaming system with additional index by key, making it query-afficient.
-                            Streaming realiability guaranteed by using Kafka as a transport between an application and the DB,
-                            also providing persistent streaming. That leads to no way for the DB to reject incomming data, making
-                            an application fully responsible for data consistency.
+                            Supervised Kafka-Journal enhancements, including team contributions, 
+                            data integrity improvements, and a strategic redesign for query-efficient, 
+                            reliable persistent streaming systems.
+                        </div>
+                    </div>
+                    <div>
+                        <div>Agent-Wallet Service Development</div>
+                        <div>
+                            Designed a reliable real-time tracking service for agent limit changes with idempotent bet processing.
+                        </div>
+                        <div>
+                            Delivered a system that operated with minimal changes, supported by other teams for years.
                         </div>
                     </div>
                     <div>
                         <div>
-                            RNG core team developer.
+                            RNG Core Team Contributions
                         </div>
                         <div>
-                            As a RNG (first-person games) core team I contibuted into game engine used as basement for 
-                            first-person games: each game served by Akka Cluster Sharding application that keeps its state
-                            in-memory (allowing reply < 10ms) and asyncronosly dumping changes into Kafka-Journal as events.
-                            Due to my work games stop losing results of long-lasting calls to other systems, game teams got
-                            much flexible API to define game logic, games can tolerate configuration changes without 
-                            interupting gameplay (even in case of delayed processing that can take few days), created geo-based
-                            routing for client connections (Evolution operates multiple clusters in different regions that 
-                            serves same clients) and contributed to different Evolution OSS libs. 
+                            Advanced game engine development for first-person multiplayer games, 
+                            optimizing state management with Akka Cluster Sharding for sub-10ms state replies 
+                            and Kafka-Journal for asynchronous event persistence.
                         </div>
                         <div>
-                            Develop and bring to production Agent-Wallet service that provides tracking of agent limit changes
-                            in real-time with strong guarantee of processing each bet no more than once. The service was later 
-                            supported by other team without almost any changes for years.
+                            Introduced geo-based routing to improve client connection efficiency across multiple regions.
+                        </div>
+                        <div>
+                            Enhanced API flexibility for game logic and ensured game tolerance to configuration changes without gameplay interruptions.
                         </div>
                     </div>
                     
-                    <div>Tech used: scala, akka cluster/sharding/persistence, http4s, cats, cats-effect, fs2, circe/play-json, 
-                        kafka, cassandra, kubernetes, prometheus.
+                    <div>
+                        <b>Technologies:</b> Scala, Akka (Cluster/Sharding/Persistence), Kafka, Cassandra, HTTP4S, Cats, FS2, Kubernetes, Prometheus.
                     </div>
                 </div>
             </div>
@@ -93,18 +93,22 @@
             <div class="details">
                 <header>
                     <h3>Software Engineer</h3>
-                    <span class="place">eBay (contractor)</span>
+                    <span class="place">eBay (Contractor)</span>
                     <span class="location">Amsterdam, Netherlands</span>
                 </header>
                 <div>
-                    <div>Develop new customer support system.</div>
                     <div>
-                        Goals:
-                        development of new customer support system, distributed, fail-safe,
-                        event-sourced and query-efficient using CQRS, creation and migration of supporting libraries,
-                        integration with other backend systems.
+                        Developed a new customer support system with distributed, fail-safe, and event-sourced architecture.
                     </div>
-                    <div>Used technologies and tools: scala, monix, kafka, cassandra, elasticsearch.</div>
+                    <div>
+                        Implemented CQRS patterns to enhance query efficiency and integrate with backend systems.
+                    </div>
+                    <div>
+                        Migrated data from legacy system into new one without downtimes.
+                    </div>
+                    <div>
+                        <b>Technologies:</b>b> Scala, Monix, Kafka, Cassandra, Elasticsearch.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,20 +126,23 @@
                     <span class="location">Amsterdam, Netherlands</span>
                 </header>
                 <div>
-                    <div>Lead tech team.</div>
+                    <div>Tech team leader</div>
                     <div>
-                        <div>Goals:</div>
-                        <ul>
-                            <li>develop schemaless analytical data storage used for user notifications on different
-                                platforms
-                            </li>
-                            <li>design data pipelines for multiple business cases</li>
-                            <li>setup tracing and monitoring</li>
-                            <li>mentoring interns</li>
-                        </ul>
+                        <div>
+                            Design and implement a schemaless analytical data storage for user notifications across platforms.
+                        </div>
+                        <div>
+                            Contributed in development of robust data pipelines for diverse business cases.
+                        </div>
+                        <div>
+                            Introduced tracing and monitoring solutions to enhance operational visibility.
+                        </div>
+                        <div>
+                            Mentored interns, fostering skill development and knowledge sharing.
+                        </div>
                     </div>
-                    <div>Used technologies and tools: scala, akka-http, cats, cats-effect, fs2, apache flink, kafka,
-                        cassandra, prometheus.
+                    <div>
+                        <b>Technologies:</b> Scala, Akka-HTTP, Cats, FS2, Apache Flink, Kafka, Cassandra, Prometheus.
                     </div>
                 </div>
             </div>
@@ -150,15 +157,17 @@
             <div class="details">
                 <header>
                     <h3>Software Engineer</h3>
-                    <span class="place">Credit Suisse, contractor</span>
+                    <span class="place">Credit Suisse (Contractor)</span>
                     <span class="location">Wroclaw, Poland</span>
                 </header>
                 <div>
                     <div>
-                        Develop tools and applications that directly contribute to the efficiency, product innovation,
-                        risk management and revenue generation of the Equity Derivatives business.
+                        Developed tools and applications for Equity Derivatives, contributing to product innovation, 
+                        risk management, and revenue generation.
                     </div>
-                    <div>Used technologies and tools: scala, akka, kafka</div>
+                    <div>
+                        <b>Technologies:</b> Scala, Akka, Kafka.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -176,19 +185,18 @@
                     <span class="location">Amsterdam, Netherlands</span>
                 </header>
                 <div>
-                    <div>Develop backend and frontend, maintain and improve infrastructure.</div>
                     <div>
-                        <div>Responsibilities:</div>
-                        <ul>
-                            <li>Develop API for booking accommodations and flight tickets, integrate with third party
-                                services, search engine optimisations
-                            </li>
-                            <li>Implement data processing pipelines using Spark.</li>
-                            <li>Migrate part of infrastructure to AWS.</li>
-                            <li>Mentoring interns.</li>
-                        </ul>
+                        Developed APIs for booking accommodations and flights, integrating with third-party services.    
                     </div>
-                    <div>Used technologies and tools: scala, akka, mongoDB, clojure, react, apache spark</div>
+                    <div>
+                        Developed frontend, backend and integrated with third-party provider car rentals. 
+                    </div>
+                    <div>
+                        Migrated infrastructure to AWS and implemented Spark-based data pipelines.
+                    </div>
+                    <div>
+                        <b>Technologies:</b> Scala, Akka, MongoDB, React, Apache Spark.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -202,14 +210,17 @@
             <div class="details">
                 <header>
                     <h3>Software Engineer</h3>
-                    <span class="place">Conductor, contractor</span>
+                    <span class="place">Conductor (Contractor)</span>
                     <span class="location">Wroclaw, Poland</span>
                 </header>
                 <div>
-                    <div>Develop Hadoop components for ETL pipeline, used for collecting, transforming and aggregating
-                        clients statistic, analysing business metrics and generating recommendations.
+                    <div>
+                        Developed Hadoop ETL pipelines for client statistics, business metrics analysis 
+                        and recommendation generation.
                     </div>
-                    <div>Used technologies and tools: java, apache hadoop, apache hbase</div>
+                    <div>
+                        <b>Technologies:</b> Java, Apache Hadoop, HBase.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -227,10 +238,12 @@
                     <span class="location">Kyiv, Ukraine</span>
                 </header>
                 <div>
-                    <div>Develop trading components for Fixed Income markets. Develop event-driven applications for ION
-                        Trading platform.
+                    <div>
+                        Built trading components for Fixed Income markets and developed event-driven applications for the ION trading platform.
                     </div>
-                    <div>Used technologies and tools: java, ion</div>
+                    <div>
+                        <b>Technologies:</b> Java, ION.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -248,8 +261,12 @@
                     <span class="location">Mykolaiv, Ukraine</span>
                 </header>
                 <div>
-                    <div>Develop single-page web apps, web crawlers and maintain infrastructure.</div>
-                    <div>Used technologies and tools: java, vaadin, puppet</div>
+                    <div>
+                        Developed single-page web apps, web crawlers, and maintained infrastructure.    
+                    </div>
+                    <div>
+                        <b>Technologies:</b> Java, Vaadin, Puppet.    
+                    </div>
                 </div>
             </div>
         </section>
@@ -307,8 +324,8 @@
         </h1>
         <ul>
             <li>Scala, Clojure, Java</li>
-            <li>Functional programming, distributed systems, event sourcing</li>
-            <li>Kafka, Cassandra, Spark</li>
+            <li>Distributed systems, functional programming, event sourcing</li>
+            <li>Akka, Kafka, Cassandra</li>
         </ul>
     </div>
 </aside>
