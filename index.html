@@ -30,24 +30,55 @@
                     <span class="location">Amsterdam, Netherlands</span>
                 </header>
                 <div>
-                    <div>Develop and maintain core services and libraries, later join RNG games team.</div>
-                    <div>As a member of RNG team, I did contributions into Evolution OSS libs, 
-                        created new wallet service (using Akka Cluster Sharding + Akka Persistence),
-                        currently working on improving shard migrations in Akka Cluster Sharding by transfering actor's state to new reincarnation instead of loading it from persistence.
-
-                        My contributions can be found in Evolution OSS repos, for example <a href="https://github.com/evolution-gaming/akka-effect">akka-effect</a>
+                    <div>
+                        <div>
+                            Cluster sharding and Kafka-Journal maintainer.
+                        </div>
+                        <div>
+                            As a maintainer of Akka Cluster Sharding based libs I implemented
+                            state-transfer feature that allows shard rebalancing without requesting state from persistence.
+                            This leads to increased rebalance throwput and lover load on persistence layer, 
+                            reduced actor's offline time during rebalancing and flatten CPU spikes on shard startup. 
+                        </div>
+                        <div>
+                            Replace Akka Persistence by implementing new persistence API and replacement of PersistentActor 
+                            to work with new persistence API. The goal was in providing backpressure capability during recovery
+                            (Akka Persistence is push-based while new API is pull-based) and smooth integration of Evolution
+                            game logic (written in FP style) with the persistence. Later used as a basement for state-transfer 
+                            feature.
+                        </div>
+                        <div>
+                            As a Kafka-Journal mainteiner I superviced team contributions, documented some tricky parts,
+                            improved data integrity and prepared plan for major architectural change: Kafka-Journal designed
+                            as reliable persistent streaming system with additional index by key, making it query-afficient.
+                            Streaming realiability guaranteed by using Kafka as a transport between an application and the DB,
+                            also providing persistent streaming. That leads to no way for the DB to reject incomming data, making
+                            an application fully responsible for data consistency.
+                        </div>
                     </div>
                     <div>
-                        <div>Responsibilities:</div>
-                        <ul>
-                            <li>support existing RNG games framework</li>
-                            <li>redesign data flows making possible increasing throughout without latency degradation
-                            </li>
-                            <li>design new version of game engine to decrease load on persistence infra</li>
-                        </ul>
+                        <div>
+                            RNG core team developer.
+                        </div>
+                        <div>
+                            As a RNG (first-person games) core team I contibuted into game engine used as basement for 
+                            first-person games: each game served by Akka Cluster Sharding application that keeps its state
+                            in-memory (allowing reply < 10ms) and asyncronosly dumping changes into Kafka-Journal as events.
+                            Due to my work games stop losing results of long-lasting calls to other systems, game teams got
+                            much flexible API to define game logic, games can tolerate configuration changes without 
+                            interupting gameplay (even in case of delayed processing that can take few days), created geo-based
+                            routing for client connections (Evolution operates multiple clusters in different regions that 
+                            serves same clients) and contributed to different Evolution OSS libs. 
+                        </div>
+                        <div>
+                            Develop and bring to production Agent-Wallet service that provides tracking of agent limit changes
+                            in real-time with strong guarantee of processing each bet no more than once. The service was later 
+                            supported by other team without almost any changes for years.
+                        </div>
                     </div>
-                    <div>Used technologies and tools: scala, akka, http4s, cats, cats-effect, fs2, circe, kafka,
-                        cassandra, kubernetes, prometheus.
+                    
+                    <div>Tech used: scala, akka cluster/sharding/persistence, http4s, cats, cats-effect, fs2, circe/play-json, 
+                        kafka, cassandra, kubernetes, prometheus.
                     </div>
                 </div>
             </div>
